@@ -13,4 +13,8 @@ public class FlowerBucket {
         }
         return price;
     }
+
+    public void addPack(FlowerPack flowerPack) {
+        flowerPackList.add(flowerPack);
+    }
 }

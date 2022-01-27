@@ -2,6 +2,7 @@ package flowerstore;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter @Setter
 public class Flower {
@@ -15,5 +16,7 @@ public class Flower {
         setPrice(price);
         setFlowerType(flowerType);
         setColor(color);
+    }
+    public Flower() {
     }
 }
