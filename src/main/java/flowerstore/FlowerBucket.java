@@ -1,20 +1,32 @@
 package flowerstore;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlowerBucket {
-    private List<FlowerPack> flowerPackList = new ArrayList<FlowerPack>();
+@Getter @Setter @ToString
+public class FlowerBucket implements Item {
 
-    public double getPrice() {
+    List<Flower> flowers = new ArrayList<>();
+
+    public double getPrice(){
         double price = 0;
-        for (FlowerPack flowerPack: flowerPackList) {
-            price += flowerPack.getPrice();
+        for (int i = 0; i < flowers.size(); i++){
+            price += flowers.get(i).getPrice();
         }
         return price;
     }
 
-    public void addPack(FlowerPack flowerPack) {
-        flowerPackList.add(flowerPack);
+    @Override
+    public String getString() {
+        return this.toString();
     }
+
+    public  void addFlower(Flower flower){
+        flowers.add(flower);
+    }
+
 }
